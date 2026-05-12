@@ -42,9 +42,7 @@ export default function Landing() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl tracking-tight text-foreground font-semibold">
-            Master the technical interview.
-          </h1>
+          <h1 className="md:text-6xl tracking-tight text-foreground text-[48px] font-semibold">Master Technical Interviews with AI</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Practice with an AI that asks real questions, probes deeper, and gives honest feedback. Like having a senior engineer in your pocket.
           </p>

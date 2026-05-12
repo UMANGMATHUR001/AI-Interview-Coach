@@ -47,7 +47,8 @@ Built to help users practice coding, DSA, frontend, backend, HR, and system desi
 
 ## 📸 Project Preview
 
-(Add screenshots here)
+<img width="1915" height="867" alt="Screenshot 2026-05-13 015912" src="https://github.com/user-attachments/assets/daf82c79-3bcc-43ff-980a-66a80d4dc8fe" />
+
 
 ---
 

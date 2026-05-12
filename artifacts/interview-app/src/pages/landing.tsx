@@ -37,7 +37,7 @@ export default function Landing() {
           className="space-y-4"
         >
           <div className="flex justify-center mb-6">
-            <div className="p-3 bg-primary/10 rounded-2xl border border-primary/20">
+            <div className="p-3 bg-primary/10 rounded-2xl border border-primary/20 pl-[12px] pr-[12px] ml-[12px] mr-[12px]">
               <Terminal className="h-10 w-10 text-primary" />
             </div>
           </div>

@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useAuth } from "@workspace/replit-auth-web";
 import { useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Terminal, Code, Cpu, Target } from "lucide-react";
+import { Terminal, Code, Target, Cpu } from "lucide-react";
 
 export default function Landing() {
   const { isAuthenticated, isLoading, login } = useAuth();
@@ -17,68 +15,75 @@ export default function Landing() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse flex items-center gap-2 text-muted-foreground">
+      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+        <div className="animate-pulse flex items-center gap-2 text-white/40">
           <Terminal className="h-5 w-5" />
-          <span>Initializing environment...</span>
+          <span className="font-mono text-sm">Initializing environment...</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background bg-[#000000] border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff]" />
-      <div className="z-10 max-w-3xl px-6 text-center space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-4"
-        >
-          <div className="flex justify-center mb-6">
-            <div className="p-3 bg-primary/10 rounded-2xl border border-primary/20 pl-[12px] pr-[12px] ml-[12px] mr-[12px]">
-              <Terminal className="h-10 w-10 text-primary" />
-            </div>
+    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col lg:flex-row overflow-hidden font-sans">
+      {/* Left Column */}
+      <div className="w-full lg:w-[55%] flex flex-col justify-center p-8 lg:p-20 xl:p-32 border-b lg:border-b-0 lg:border-r border-white/10">
+        <div className="max-w-2xl">
+          <div className="mb-16 flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10">
+            <Terminal className="w-8 h-8 text-white" />
           </div>
 
-          <h1 className="md:text-6xl tracking-tight text-foreground text-[48px] font-semibold">Master Technical Interviews with AI</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
+            Master Technical<br />
+            Interviews with AI
+          </h1>
+
+          <p className="text-xl lg:text-2xl text-white/60 mb-12 leading-relaxed max-w-xl">
             Practice with an AI that asks real questions, probes deeper, and gives honest feedback. Like having a senior engineer in your pocket.
           </p>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center"
-        >
-          <Button onClick={login} size="lg" className="h-12 px-8 text-lg rounded-xl">Login User</Button>
-        </motion.div>
+          <button
+            onClick={login}
+            className="bg-white text-black hover:bg-white/90 transition-colors text-lg font-semibold px-8 py-4 rounded-full w-full sm:w-auto"
+          >
+            Login
+          </button>
+        </div>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 border-t border-border/50"
-        >
-          <div className="flex flex-col items-center p-6 space-y-3 bg-card/50 rounded-2xl border border-border/50">
-            <Code className="h-6 w-6 text-primary" />
-            <h3 className="font-semibold">Real Scenarios</h3>
-            <p className="text-sm text-muted-foreground text-center">Practice system design, DSA, and specific tech stacks.</p>
+      {/* Right Column */}
+      <div className="w-full lg:w-[45%] flex flex-col justify-center p-8 lg:p-20 bg-[#0c0c0c]">
+        <div className="max-w-xl flex flex-col gap-6">
+          <div className="flex flex-col p-8 border-l-4 border-indigo-500 bg-white/5 hover:bg-white/[0.07] transition-colors rounded-r-2xl">
+            <div className="mb-4 text-indigo-400">
+              <Code className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-semibold mb-3">Real Scenarios</h3>
+            <p className="text-lg text-white/50 leading-relaxed">
+              Tackle complex system design and DSA problems that mirror actual tech company interviews.
+            </p>
           </div>
-          <div className="flex flex-col items-center p-6 space-y-3 bg-card/50 rounded-2xl border border-border/50">
-            <Target className="h-6 w-6 text-primary" />
-            <h3 className="font-semibold">Honest Feedback</h3>
-            <p className="text-sm text-muted-foreground text-center">Get detailed scores on technical depth and communication.</p>
+
+          <div className="flex flex-col p-8 border-l-4 border-emerald-500 bg-white/5 hover:bg-white/[0.07] transition-colors rounded-r-2xl">
+            <div className="mb-4 text-emerald-400">
+              <Target className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-semibold mb-3">Honest Feedback</h3>
+            <p className="text-lg text-white/50 leading-relaxed">
+              Get objective scores and detailed breakdowns on your technical depth and communication.
+            </p>
           </div>
-          <div className="flex flex-col items-center p-6 space-y-3 bg-card/50 rounded-2xl border border-border/50">
-            <Cpu className="h-6 w-6 text-primary" />
-            <h3 className="font-semibold">Adaptive AI</h3>
-            <p className="text-sm text-muted-foreground text-center">The interviewer adapts to your answers and digs deeper.</p>
+
+          <div className="flex flex-col p-8 border-l-4 border-amber-500 bg-white/5 hover:bg-white/[0.07] transition-colors rounded-r-2xl">
+            <div className="mb-4 text-amber-400">
+              <Cpu className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-semibold mb-3">Adaptive AI</h3>
+            <p className="text-lg text-white/50 leading-relaxed">
+              Experience an interviewer that dynamically adapts its follow-up questions based on your answers.
+            </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

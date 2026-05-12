@@ -56,9 +56,7 @@ export default function Landing() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex justify-center"
         >
-          <Button onClick={login} size="lg" className="h-12 px-8 text-lg rounded-xl">
-            Authenticate / Login
-          </Button>
+          <Button onClick={login} size="lg" className="h-12 px-8 text-lg rounded-xl">Login User</Button>
         </motion.div>
 
         <motion.div

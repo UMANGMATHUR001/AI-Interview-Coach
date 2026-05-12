@@ -1,0 +1,394 @@
+# Build a Full-Stack AI Interview Practice Platform
+
+Build a modern production-style full-stack web application called:
+
+# “AI Interview Practice Chat”
+
+The platform should simulate a realistic AI-powered technical interview environment where users can practice interviews interactively and receive personalized feedback.
+
+The project should feel like a modern SaaS AI platform similar to ChatGPT or modern interview-prep applications.
+
+---
+
+# Primary Goal
+
+Focus heavily on:
+
+* Smooth modern UI/UX
+* Secure authentication
+* SQL-based data architecture
+* Realistic AI interview interactions
+* Fast performance
+* Scalable project structure
+* Clean reusable code
+
+---
+
+# Preferred Tech Stack
+
+## Frontend
+
+* React.js
+* Tailwind CSS
+* Framer Motion
+
+## Backend
+
+* Node.js
+* Express.js
+
+## Database
+
+* SQLite
+
+## Authentication
+
+* OTP-based email authentication
+* JWT/session authentication
+
+---
+
+# IMPORTANT DEVELOPMENT INSTRUCTIONS
+
+* Build the project with clean modular architecture
+* Use reusable React components
+* Use proper API separation
+* Use environment variables properly
+* Use secure backend practices
+* Keep code beginner-friendly and readable
+* Add comments explaining important sections
+* Avoid unnecessary complexity
+* Prioritize working functionality over overengineering
+
+---
+
+# APPLICATION FEATURES
+
+# 1. Authentication System
+
+Implement secure OTP-based authentication.
+
+## Authentication Flow
+
+1. User enters email
+2. OTP is generated and sent to email
+3. User enters OTP
+4. OTP gets verified
+5. User account is created automatically
+6. User session starts securely
+
+## Requirements
+
+* OTP expiration timer
+* Resend OTP functionality
+* Passwordless login system
+* JWT or session-based authentication
+* Logout functionality
+* Store login timestamps
+* Prevent OTP spam requests
+* Add rate limiting
+* Secure token expiration
+
+## Future Scalability
+
+Structure authentication system so Google OAuth or GitHub OAuth can be added later.
+
+---
+
+# 2. SQL Database Architecture
+
+Use proper normalized SQL tables.
+
+## Users Table
+
+Fields:
+
+* id
+* name
+* email
+* created_at
+* last_login
+
+## Interview Sessions Table
+
+Fields:
+
+* session_id
+* user_id
+* role_selected
+* difficulty_level
+* interview_type
+* started_at
+* ended_at
+
+## Chat Messages Table
+
+Fields:
+
+* message_id
+* session_id
+* sender_type
+* message
+* timestamp
+
+## Performance Analytics Table
+
+Fields:
+
+* analytics_id
+* user_id
+* confidence_score
+* technical_score
+* communication_score
+* weak_topics
+* improvement_suggestions
+
+---
+
+# SQL Optimization Requirements
+
+Implement:
+
+* Indexed tables for faster retrieval
+* Efficient relational mapping
+* Prepared statements to prevent SQL injection
+* Optimized query structure
+* Pagination/lazy loading for old chats
+* Efficient storage for long conversations
+
+---
+
+# 3. AI Interview System
+
+The AI should behave like a realistic interviewer.
+
+## Interview Setup
+
+User can select:
+
+* Job Role
+* Difficulty Level
+* Interview Type
+
+Examples:
+
+* Frontend
+* Backend
+* JavaScript
+* React
+* Python
+* DSA
+* HR
+* Cloud Computing
+
+---
+
+# AI Interview Behavior
+
+The AI should:
+
+* Ask interview questions dynamically
+* Ask follow-up questions
+* Analyze user responses
+* Give realistic feedback
+* Generate scores
+* Suggest improvements
+* Mention weak areas
+* Simulate real interview flow
+
+---
+
+# AI Smart Features
+
+Implement:
+
+* Typing animation
+* AI thinking delay
+* Smooth message rendering
+* Realistic interviewer personality
+* Topic-wise scoring system
+
+Optional:
+
+* AI memory system using SQL
+
+Example:
+“Last time you struggled with JavaScript closures. Let’s revisit that topic.”
+
+---
+
+# 4. Dashboard System
+
+After login, user should access a dashboard.
+
+## Dashboard Features
+
+* Previous interview history
+* Total interviews
+* Scores and analytics
+* Weak topic tracking
+* Recently practiced topics
+* Performance improvement tracking
+
+---
+
+# Analytics Features
+
+Track:
+
+* Most failed topic
+* Average response time
+* Improvement percentage
+* Frequently asked interview topics
+
+Generate smart analytics messages like:
+“Your JavaScript problem-solving improved by 32% this month.”
+
+---
+
+# 5. UI/UX Design Requirements
+
+The UI should feel modern and premium.
+
+## Design Style
+
+* Dark modern interface
+* Glassmorphism or futuristic design
+* Smooth animations
+* Responsive layout
+* Interactive hover effects
+* Professional SaaS appearance
+
+---
+
+# Chat UI Requirements
+
+Build a polished AI chat interface with:
+
+* Auto-scroll
+* Typing indicator
+* Animated message appearance
+* Responsive mobile support
+* Clean chat bubbles
+* Sidebar navigation
+* Session history panel
+
+---
+
+# 6. Advanced Features
+
+## Session Recovery
+
+If browser closes accidentally:
+
+* Restore interview session from SQL database
+
+## Local Performance Optimization
+
+Use:
+
+* localStorage
+* caching strategies
+
+to reduce unnecessary database/API requests.
+
+---
+
+# 7. Anti-Cheat / Smart Monitoring
+
+Track:
+
+* Tab switching
+* Long inactivity
+* Copy-paste detection
+
+Display warnings during interview simulation.
+
+---
+
+# 8. Optional Premium Features
+
+If possible implement:
+
+* Voice interview mode
+* Speech-to-text
+* Resume upload analysis
+* AI-generated PDF interview report
+* Daily coding challenge
+* Leaderboard system
+
+---
+
+# Project Architecture Requirements
+
+Use clean folder structure.
+
+Example:
+
+/client
+/components
+/pages
+/hooks
+/services
+/context
+
+/server
+/routes
+/controllers
+/middleware
+/models
+/utils
+
+---
+
+# Backend API Requirements
+
+Create proper REST APIs for:
+
+* Authentication
+* OTP verification
+* Interview session handling
+* Chat history
+* Analytics
+* Dashboard data
+
+---
+
+# Security Requirements
+
+Implement:
+
+* Input validation
+* SQL injection prevention
+* Secure JWT handling
+* Rate limiting
+* Environment variable protection
+* Secure authentication middleware
+
+---
+
+# Final Output Expectations
+
+The final application should:
+
+* Look modern and polished
+* Feel interactive and responsive
+* Demonstrate full-stack architecture
+* Showcase authentication + SQL skills
+* Be suitable for portfolio and recruiter demonstrations
+* Be deployable in production
+
+---
+
+# Additional Important Instruction
+
+Keep the implementation practical and realistic for a student developer project.
+
+Focus more on:
+
+* clean architecture
+* polished UI
+* working authentication
+* realistic interview flow
+
+instead of unnecessary enterprise-level complexity.

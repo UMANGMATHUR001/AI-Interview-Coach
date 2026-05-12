@@ -28,7 +28,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background bg-[#000000] border-t-[#ffffff] border-r-[#ffffff] border-b-[#ffffff] border-l-[#ffffff]" />
       <div className="z-10 max-w-3xl px-6 text-center space-y-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -36,7 +36,12 @@ export default function Landing() {
           transition={{ duration: 0.5 }}
           className="space-y-4"
         >
-          
+          <div className="flex justify-center mb-6">
+            <div className="p-3 bg-primary/10 rounded-2xl border border-primary/20">
+              <Terminal className="h-10 w-10 text-primary" />
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-6xl tracking-tight text-foreground font-semibold">
             Master the technical interview.
           </h1>
